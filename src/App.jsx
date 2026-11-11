@@ -1,14 +1,12 @@
-import Header from './components/Header';
-import Main from './components/Main';
-import './App.css';
+import ProductList from './components/ProductList';
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <Main name="Ростислав" age={18} group="ІПЗ" />
-    </div>
-  );
+    return (
+        <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+            <h1>Магазин товарів</h1>
+            <ProductList />
+        </div>
+    );
 }
 
 export default App;
