@@ -1,15 +1,13 @@
-import { Link, NavLink } from 'react-router';
+import { NavLink } from 'react-router';
 
 function Header() {
   return (
-    <header className="header">
-      <div className="container header-inner">
-        <Link className="brand" to="/"><span aria-hidden="true">✓</span> ToDo Manager</Link>
-        <nav aria-label="Основна навігація">
-          <NavLink to="/" end>Завдання</NavLink>
-          <NavLink to="/tasks/new">Нове завдання</NavLink>
-        </nav>
-      </div>
+    <header className="container">
+      <strong>ToDo Manager</strong>
+      <nav aria-label="Основна навігація">
+        <NavLink to="/" end>Список завдань</NavLink>
+        <NavLink to="/tasks/new">Додати завдання</NavLink>
+      </nav>
     </header>
   );
 }
