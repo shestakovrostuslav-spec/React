@@ -31,12 +31,25 @@ npm run dev
 
 ```bash
 npm test
-npm run lint
-npm run build
 ```
 
 Тести Vitest перевіряють створення та редагування через форму, валідацію назви й дії з рядком завдання. Папка збірки `dist` і правило маршрутизації для Netlify задані в `netlify.toml`.
 
-## Презентація
+## 🚀 Інструкція із запуску на Vercal
 
-[Презентація проєкту у форматі PowerPoint](docs/ToDo-Manager.pptx)
+### Клонування репозиторію
+Клонуйте проєкт на свій комп'ютер:
+
+```bash
+git clone [https://github.com/shestakovrostuslav-spec/React.git](https://github.com/shestakovrostuslav-spec/React.git)
+cd React
+```
+
+Встановлення залежностей
+Встановіть усі необхідні пакети, зазначені в package.json:
+
+```
+npm install
+```
+
+Проєкт налаштований для автоматичного деплою на платформу Vercel під час злиття гілок у
