@@ -8,12 +8,12 @@ export default function TaskItem({ task, onToggle, onRemove }) {
         <span>{task.title}</span>
       </label>
       <div className="task-details">
-        <span className="category">{task.category}</span>
+        <span>{task.category}</span>
         {task.deadline && <time dateTime={task.deadline}>До {task.deadline.split('-').reverse().join('.')}</time>}
       </div>
-      <div className="actions task-actions">
-        <Link className="button" to={`/tasks/${task.id}/edit`} aria-label={`Редагувати: ${task.title}`}>Редагувати</Link>
-        <button className="danger" type="button" onClick={() => onRemove(task.id)} aria-label={`Видалити: ${task.title}`}>Видалити</button>
+      <div className="actions">
+        <Link to={`/tasks/${task.id}/edit`} aria-label={`Редагувати: ${task.title}`}>Редагувати</Link>
+        <button type="button" onClick={() => onRemove(task.id)} aria-label={`Видалити: ${task.title}`}>Видалити</button>
       </div>
     </li>
   );
