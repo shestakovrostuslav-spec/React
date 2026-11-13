@@ -1,22 +1,29 @@
-import Header from './components/Header';
-import SharedParent from './components/SharedParent';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Gallery from './components/Gallery';
+import PhotoDetails from './components/PhotoDetails';
+import Contact from './components/Contact';
+import NotFound from './components/NotFound';
 
 function App() {
-    const appStyle = {
-        fontFamily: 'Arial, sans-serif',
-        maxWidth: '500px',
-        margin: '40px auto',
-        padding: '20px',
-        border: '1px solid #ddd',
-        borderRadius: '10px',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.05)'
-    };
-
     return (
-        <div style={appStyle}>
-            <Header />
-            <SharedParent />
-        </div>
+        <BrowserRouter>
+            <div className="app-container">
+                <Navbar />
+                <main className="content">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/gallery" element={<Gallery />} />
+                        {/* Динамічний маршрут для окремої роботи */}
+                        <Route path="/gallery/:id" element={<PhotoDetails />} />
+                        <Route path="/contact" element={<Contact />} />
+                        {/* Обробка всіх невідомих URL */}
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </main>
+            </div>
+        </BrowserRouter>
     );
 }
 
