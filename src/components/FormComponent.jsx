@@ -11,17 +11,16 @@ function BookForm() {
 
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState(null);
-
+    // ловить зміни
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
         }));
-        // Очищаємо помилку при введенні користувача
         if (error) setError('');
     };
-
+    // ловить натискання
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -36,11 +35,9 @@ function BookForm() {
             return;
         }
 
-        // Зберігаємо дані в успішний стан для виведення на екран
         setSuccessMessage({ ...formData });
         console.Hоlog ? null : console.log('Додано книгу:', formData);
 
-        // Очищення форми
         setFormData({
             title: '',
             author: '',
